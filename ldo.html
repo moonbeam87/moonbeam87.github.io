@@ -5,51 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LDO Design - Dev Patel</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header, footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2, .card h3 {
+            color: #007bff;
+        }
+        .gallery img {
+            width: calc(50% - 10px);
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
 </head>
-<style>
-    .pdf {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-    }
-
-    .pdf,
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1,
-    h3 {
-        text-align: center;
-    }
-
-    h1 {
-        color: green;
-    }
-</style>
-
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <!-- Add links to other pages if needed -->
+                <!-- Add more links as needed -->
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="card">
-            <h2>LDO Design</h2>
-            <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
-            <p><strong>Dates:</strong> May 2024</p>
-            <p><strong>Class:</strong> ECE483 - Final Project</p>
-            <iframe class="pdf" 
-                src="ldo.pdf"
-                >
-            </iframe>
+            <h2>Low Dropout Regulator (LDO) Design</h2>
+            <p><strong>Course:</strong> ECE 483 - Analog IC Design</p>
+            <p><strong>Authors:</strong> Sayankar, Rutvik and Patel, Dev</p>
+            <p>This project involved designing and simulating an LDO to meet specific input/output/load criteria while ensuring precise DC load and line regulation.</p>
+        </section>
+
+        <section class="card">
+            <h3>Design Highlights</h3>
+            <p>
+                - Topology: Telescopic Cascode OTA for superior output swing and stability.<br>
+                - Compensation Capacitor: Optimized for phase margin and loop gain.<br>
+                - Performance: Achieved 15.55 µV/mA load regulation and a worst-case PSR of -1.42 dB.
+            </p>
+        </section>
+
+        <section class="card gallery">
+            <img src="483diagram.drawio.png" alt="LDO Schematic">
+            <img src="LoopGainMagnitudeMaxLoadCurrent.png" alt="LDO Performance Metrics">
+            <img src="LoopGainPhaseMaxLoadCurrent.png" alt="LDO Performance Metrics">
+        </section>
+
+        <section class="card">
+            <h3>Simulation Results</h3>
+            <p>Key parameters such as load regulation, line regulation, and power supply rejection were analyzed to ensure optimal performance. The design met stringent specifications for high-efficiency voltage regulation.</p>
         </section>
     </main>
 

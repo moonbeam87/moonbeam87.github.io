@@ -5,37 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pipelined ADC Design - Dev Patel</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header, footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2, .card h3 {
+            color: #007bff;
+        }
+        .gallery img {
+            width: calc(50% - 10px);
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
 </head>
-<style>
-    .pdf {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-    }
-
-    .pdf,
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1,
-    h3 {
-        text-align: center;
-    }
-
-    h1 {
-        color: green;
-    }
-</style>
-
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <!-- Add links to other pages if needed -->
+                <!-- Add more links as needed -->
             </ul>
         </nav>
     </header>
@@ -43,14 +70,33 @@
     <main>
         <section class="card">
             <h2>Pipelined ADC Design</h2>
-            <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
-            <p><strong>Dates:</strong> December 2024</p>
-            <p><strong>Class:</strong> ECE581 - Final Project</p>
-            <iframe class="pdf" 
-                src="adcfinal.pdf"
-                width="800"
-                height="500">
-        </iframe>
+            <p><strong>Course:</strong> ENG 581 - Pipelined ADC Design</p>
+            <p><strong>Authors:</strong> Sayankar, Rutvik and Patel, Dev</p>
+            <p>The project aimed to design the first stage of a 12-bit pipelined ADC focusing on the residue amplifier, sub-ADC, and MDAC to meet high-performance specifications with minimal power consumption.</p>
+        </section>
+
+        <section class="card">
+            <h3>Design Highlights</h3>
+            <p>
+                - Residue Amplifier: Folded-cascode opamp for high bandwidth and low power.<br>
+                - Sub-ADC: Utilized pre-amplifier-based comparators for improved noise immunity and speed.<br>
+                - MDAC: Transmission gate-based MUX for efficient signal switching.
+            </p>
+        </section>
+
+        <section class="card gallery">
+            <img src="1p5bADC_blockdiagram.png" alt="Pipelined ADC Block Diagram">
+            <img src="cmfb_opamp.png" alt="Residue Amplifier Schematic">
+            <img src="comparator (1).png" alt="1.5b Sub-ADC Schematic">
+            <img src="comparator-graph (1).png" alt="1.5b Sub-ADC Schematic">
+            <img src="mux (1).png" alt="1.5b Sub-ADC Schematic">
+            <img src="mux-graph (1).png" alt="1.5b Sub-ADC Schematic">
+
+        </section>
+
+        <section class="card">
+            <h3>Simulation Results</h3>
+            <p>Key parameters such as SNDR, SFDR, and power consumption were evaluated. The design demonstrated effective performance, meeting the required specifications for high-speed analog-to-digital conversion.</p>
         </section>
     </main>
 
