@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autonomous Car Algorithm Development - Dev Patel</title>
+    <title>Active BMS - Dev Patel</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -62,13 +62,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        iframe {
-            width: 100%;
-            max-width: 800px;
-            height: 450px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
         footer {
             text-align: center;
             padding: 20px;
@@ -89,34 +82,30 @@
 
     <main>
         <section class="card">
-            <h2>Autonomous Car Algorithm Development</h2>
-            <p><strong>Dates:</strong> May 2024</p>
-            <p><strong>Class:</strong> ECE484 - Final Project</p>
-            <p class="project-overview">
-                This project involved developing an autonomous racing algorithm using python for the GRAIC competition using ROS and CARLA. The focus was on advanced computer vision, intelligent pathfinding, and obstacle avoidance systems, achieving superior lap times and dynamic responsiveness.
-            </p>
+            <h2>Active Battery Management System (BMS) Development</h2>
+            <p><strong>Project Date:</strong> Ongoing</p>
+            <p>This project focuses on developing an advanced, low-cost Battery Management System (BMS) for energy storage solutions, particularly for electric vehicles and renewable energy applications.</p>
+            <p>The new BMS design addresses previous limitations by introducing efficient charge redistribution, constant monitoring, and active balancing to ensure safety and optimize performance.</p>
         </section>
 
         <section class="card">
-            <h3>Project Highlights</h3>
-            <p>
-                - Pathfinding: Implemented RRT with gradient descent for optimal racing lines.<br>
-                - Control Systems: Enhanced PID control for smooth braking and momentum conservation.<br>
-                - Computer Vision: Real-time obstacle detection and predictive avoidance strategies.
-            </p>
+            <h3>Key Features and Innovations</h3>
+            <p><strong>Pack-to-Cell Balancing:</strong> Ensures even charge distribution across all cells.</p>
+            <p><strong>Cell Monitoring:</strong> Utilizes differential op-amps for accurate, safe monitoring of individual cells.</p>
+            <p><strong>Efficient Communication:</strong> Integrates CANBus, I2C, and UART for robust system communication.</p>
+        </section>
+
+        <section class="card gallery">
+            <img src="image1.png" alt="BMS Design Overview">
+            <img src="image2.png" alt="PCB Layout">
+            <img src="image3.png" alt="Built BMS Board">
+            <img src="image4.png" alt="Demo Setup">
         </section>
 
         <section class="card">
-            <h3>Performance Results</h3>
-            <p>
-                The algorithm consistently outperformed benchmarks, maintaining high cornering speeds while effectively avoiding obstacles. The optimization of racing lines through advanced algorithms significantly improved overall performance and responsiveness.
-            </p>
-            <p>This embedded video shows one of our final runs with the RRT pathfinding:</p>
-            <iframe 
-                src="https://www.youtube.com/embed/[VIDEO_ID_HERE]" 
-                title="[VIDEO_TITLE_HERE]" 
-                frameborder="0" 
-                allowfullscreen></iframe>
+            <h3>Performance and Testing</h3>
+            <p>The final design was built and tested, showcasing significant improvements over the previous iterations. Key operations like cell balancing, voltage monitoring, and communication protocols were successfully verified.</p>
+            <p>Future enhancements include refining the ADC configurations and integrating all components into a single cohesive system.</p>
         </section>
     </main>
 
