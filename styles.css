@@ -8,11 +8,11 @@ body, h1, h2, p, ul, li, a {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f0f8ff; /* Light blue background */
     color: #333;
     line-height: 1.6;
     padding: 20px;
-    text-align: center; /* Center-align content for better visual hierarchy */
+    text-align: center;
 }
 
 /* Header styles */
@@ -35,7 +35,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #007bff;
+    color: #ff4500; /* Hover effect with orange color */
 }
 
 /* Card styles */
@@ -44,14 +44,14 @@ nav a:hover {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(8, 0, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 255, 0.2);
 }
 
 .card h2 {
@@ -64,13 +64,15 @@ nav a:hover {
     background: #f9f9f9;
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 255, 0.1);
     margin-bottom: 15px;
 }
+
 .card-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 255, 0.2);
 }
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -79,31 +81,30 @@ nav a:hover {
 
 /* Image styles */
 .profile-pic {
-
     width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  overflow: hidden;
-    margin: 0 auto 20px; /* Centering and spacing */
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto 20px;
     display: block;
 }
 
 .card img {
     width: 100%;
     max-width: 480px;
-    max-height: 250px; /* Increased height for logos */
-    object-fit: contain; /* Ensure logos are not cut off */
+    max-height: 250px;
+    object-fit: contain;
     border-radius: 8px;
     margin: 0 auto 15px;
     display: block;
 }
 
 /* Welcome and About sections - Center text */
-#welcome{
+#welcome {
     text-align: center;
 }
 
-#welcome h1, #welcome p, #about h2{
+#welcome h1, #welcome p, #about h2 {
     text-align: center;
 }
 
@@ -136,11 +137,11 @@ nav a:hover {
 
 /* Hidden element styles */
 .hidden-element {
-    display: none; /* Initially hidden */
+    display: none;
     background: #f9f9f9;
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 255, 0.1);
     margin-bottom: 15px;
 }
 
@@ -159,7 +160,7 @@ nav a:hover {
 }
 
 .hidden-element button:hover {
-    background-color: #0056b3;
+    background-color: #ff4500;
 }
 
 /* Footer styles */
@@ -186,5 +187,5 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
+    color: #ff4500;
 }
