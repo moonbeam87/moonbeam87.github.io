@@ -44,7 +44,7 @@ nav a:hover {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(8, 0, 255, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
 }
@@ -79,10 +79,11 @@ nav a:hover {
 
 /* Image styles */
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Circular frame */
-    object-fit: cover;
+
+    width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  overflow: hidden;
     margin: 0 auto 20px; /* Centering and spacing */
     display: block;
 }
