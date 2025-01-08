@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Patel - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome" class="card">
+            <img src="devpatel.png" alt="Dev Patel" class="profile-pic">
+            <h1>Dev Patel</h1>
+            <p>Interested in Analog/Mixed Signal Design, Embedded Systems, and More.</p>
+        </section>
+
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>Hello! I'm Dev Patel, an electrical engineering student with a strong focus on analog/mixed signal chip design, embedded systems, and battery management. My passion lies in solving complex engineering problems through innovative design and cutting-edge technology.</p>
+            <p>Throughout my academic and professional journey, I’ve gained hands-on experience working with embedded firmware, analog circuits, and high-performance systems. I've interned at Rivian, Rocket Lab USA, ST Microelectronics, and RelyIon Energy, contributing to projects from developing embedded systems for power electronics to designing energy-efficient hardware.</p>
+            <p>I strive to make a positive impact on the future of energy systems, embedded applications, and automation. I’m always looking for new challenges and opportunities to innovate and collaborate in the fields of electrical engineering and technology.</p>
+        </section>
+
+        <section id="education" class="card">
+            <h2>Education</h2>
+            <div class="card-content">
+                <img src="illinois.png" alt="University of Illinois Urbana Champaign">
+                <div class="text-content">
+                    <p><strong>University of Illinois Urbana Champaign</strong></p>
+                    <p>Masters+BS in Electrical Engineering, Minor in Computer Science</p>
+                    <p><strong>GPA:</strong> 3.6</p>
+                    <p>Notable Courses: Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing, Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="card">
+            <h2>Experience</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <img src="rivian.jpg" alt="Rivian">
+                    <h3>Power Electromics Engineering Intern - Rivian</h3>
+                    <p><strong>Jan 2025 – Present | Champaign, IL</strong></p>
+                    <p>Currently interning part-time at Rivian.</p>
+                </div>
+                
+                <div class="card-item">
+                    <img src="rocketlab.jpg" alt="Rocket Lab USA">
+                    <h3>Space Systems Intern - Rocket Lab USA</h3>
+                    <p><strong>May 2024 – August 2024 | Long Beach, CA</strong></p>
+                    <p>Designed machine learning models using PyTorch to automate PCBA defect analysis, reducing inspection times by over 2x. Developed embedded systems for ground support hardware, including a 3-axis PCBA controller and custom battery pack screening.</p>
+                </div>
+
+                <div class="card-item">
+                    <img src="stmicro.jpg" alt="ST Microelectronics">
+                    <h3>Embedded Applications Engineer - ST Microelectronics</h3>
+                    <p><strong>June 2023 – December 2023 | Chicago, IL</strong></p>
+                    <p>Prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers. Developed firmware for MPPT algorithms and implemented control on STM32 microcontrollers.</p>
+                </div>
+
+                <div class="card-item">
+                    <img src="relyion.jpg" alt="RelyIon Energy">
+                    <h3>Embedded Battery Engineering Intern - RelyIon Energy</h3>
+                    <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
+                    <p>Developed software for a 480V High Voltage Energy Storage System using recycled batteries, achieving a 5x cost reduction in battery pack balancing systems.</p>
+                </div>
+
+                <div class="card-item">
+                    <img src="abbvie.jpg" alt="AbbVie">
+                    <h3>AWS Developer Intern - AbbVie</h3>
+                    <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
+                    <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
+                    <h3>Pipelined ADC Design</h3>
+                    <p><strong>Dates:</strong> December 2024</p>
+                    <p><strong>Class:</strong> ECE581 - Final Project</p>
+                    <p>Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit pipelined ADC, focusing on the residue amplifier, sub-ADC, and switched capacitor MDAC...</p>
+                </div>
+
+                <div class="card-item">
+                    <!-- <img src="ota_design.jpg" alt="OTA Design"> -->
+                    <h3>Gain-boosted and Two-stage OTA Design</h3>
+                    <p><strong>Dates:</strong> September 2024 – October 2024</p>
+                    <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
+                    <p>Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and unity-gain frequency exceeding 50 MHz...</p>
+                </div>
+
+                <div class="card-item">
+                    <!-- <img src="ldo_design.jpg" alt="LDO Design"> -->
+                    <h3>Low Dropout Regulator (LDO) Design</h3>
+                    <p><strong>Dates:</strong> April 2024 – May 2024</p>
+                    <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
+                    <p>Designed an LDO with a telescopic cascode OTA, optimizing biasing and compensation for high output swing and stability...</p>
+                </div>
+
+                <div class="card-item">
+                    <!-- <img src="autonomous_car.jpg" alt="Autonomous Car Algorithm"> -->
+                    <h3>Autonomous Car Algorithm Development</h3>
+                    <p><strong>Dates:</strong> May 2024</p>
+                    <p><strong>Class:</strong> ECE484 - Autonomous Driving Systems</p>
+                    <p>Developed an autonomous car algorithm that raced around the Shanghai International Circuit using ROS, CARLA, RRTs, and Python...</p>
+                </div>
+
+                <div class="card-item">
+                    <!-- <img src="bms.jpg" alt="BMS Development"> -->
+                    <h3>STM32 F4 Based Active Balancing BMS</h3>
+                    <p><strong>Club:</strong> EV Concept</p>
+                    <p><strong>Dates:</strong> October 2023 – March 2024</p>
+                    <p>Developed an active balancing Battery Management System (BMS) for a custom-built 48V lithium-ion battery pack...</p>
+                </div>
+
+                <div class="card-item">
+                    <!-- <img src="serdes.jpg" alt="SERDES Design"> -->
+                    <h3>16-bit SERDES with PRBS</h3>
+                    <p><strong>Dates:</strong> November 2023 – December 2023</p>
+                    <p><strong>Class:</strong> Digital Integrated Circuit Design</p>
+                    <p>Designed a high-speed clock divider and serializer/deserializer (SERDES) systems, progressing from high-level schematics to finalized layouts and simulations...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="aws-certifications" class="card">
+            <h2>AWS Certifications</h2>
+            <ul>
+                <li>Amazon Web Services Certified Solutions Architect - Associate</li>
+                <li>Amazon Web Services Certified Solutions Architect - Professional</li>
+                <li>Amazon Web Services Certified Security - Specialty</li>
+            </ul>
+        </section>
+
+        <section id="hobbies" class="card">
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Rock Climbing</li>
+                <li>Electric cars and Batteries</li>
+                <li>NFL</li>
+                <li>Formula 1</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="card">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso</li>
+                <li><strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink</li>
+                <li><strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog</li>
+                <li><strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate, Professional, Security Specialty)</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p><strong>Phone:</strong> +1-703-629-0911</p>
+            <p><strong>Email:</strong> <a href="mailto:2021dpatel@gmail.com">2021dpatel@gmail.com</a>, <a href="mailto:devdp2@illinois.edu">devdp2@illinois.edu</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dev-patel-aws" target="_blank">LinkedIn</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/moonbeam87" target="_blank">GitHub</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Patel</p>
+    </footer>
+</body>
+</html>
