@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Design - Dev Patel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .pdf,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+
+    h1 {
+        color: green;
+    }
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- Add links to other pages if needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Autonomous Car Algorithm Development</h2>
+            <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
+            <p><strong>Dates:</strong> May 2024</p>
+            <p><strong>Class:</strong> ECE484 - Final Project</p>
+    
+            <p class="project-overview">
+                Successfully implemented an autonomous racing solution for the GRAIC competition using ROS (Robot Operating System) 
+                and CARLA simulation environment. The project focused on advanced computer vision analysis, intelligent pathfinding, 
+                and sophisticated obstacle avoidance systems, all while exceeding the minimum required lap time performance metrics.
+            </p>
+    
+            <h3>Advanced Pathfinding and Optimization</h3>
+            <p>
+                Implemented RRT (Rapidly-exploring Random Trees) pathfinding algorithm with custom optimizations for dynamic 
+                racing environments. Enhanced the base algorithm with gradient descent optimization for waypoint generation, 
+                resulting in an optimal racing line with minimal curvature. This innovation significantly improved cornering 
+                speeds while maintaining the vehicle's agility for obstacle avoidance.
+            </p>
+    
+            <h3>Intelligent Control Systems</h3>
+            <p>
+                Developed a sophisticated PID control loop with custom modifications for intelligent brake management. The system 
+                implements light braking techniques rather than traditional aggressive braking approaches, allowing for:
+                <ul>
+                    <li>Enhanced momentum conservation through corners</li>
+                    <li>Smoother transitions between waypoints</li>
+                    <li>Improved overall vehicle stability</li>
+                    <li>Superior lap times compared to standard implementations</li>
+                </ul>
+            </p>
+    
+            <h3>Computer Vision and Obstacle Management</h3>
+            <p>
+                Utilized Python to create a comprehensive computer vision system in ROS that handles:
+                <ul>
+                    <li>Real-time obstacle detection and tracking</li>
+                    <li>Dynamic path adjustment based on environmental conditions</li>
+                    <li>Predictive avoidance strategies for approaching corners</li>
+                </ul>
+            </p>
+    
+            <h3>Performance Results</h3>
+            <p>
+                The implemented solution successfully exceeded the competition's minimum lap time requirements while maintaining 
+                robust obstacle avoidance capabilities. The optimization of the racing line through gradient descent, combined 
+                with the sophisticated braking system, allowed the vehicle to maintain higher cornering speeds while remaining 
+                responsive to dynamic obstacles.
+            </p>
+    
+            <p>This embedded video shows one of our final runs with the RRT pathfinding</p>
+            <iframe 
+                width="800" 
+                height="500" 
+                src="https://www.youtube.com/embed/[VIDEO_ID_HERE]" 
+                title="[VIDEO_TITLE_HERE]" 
+                frameborder="0" 
+                allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Patel</p>
+    </footer>
+</body>
+</html>
