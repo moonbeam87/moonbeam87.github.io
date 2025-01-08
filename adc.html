@@ -6,6 +6,30 @@
     <title>Pipelined ADC Design - Dev Patel</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .pdf,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h3 {
+        text-align: center;
+    }
+
+    h1 {
+        color: green;
+    }
+</style>
+
 <body>
     <header>
         <nav>
@@ -19,12 +43,14 @@
     <main>
         <section class="card">
             <h2>Pipelined ADC Design</h2>
-            <img src="pipelines_adc.jpg" alt="Pipelined ADC Design">
+            <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
             <p><strong>Dates:</strong> December 2024</p>
             <p><strong>Class:</strong> ECE581 - Final Project</p>
-            <p>Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit pipelined ADC...</p>
-            <p>Here, you'll find more details about the design, challenges faced, and the technical approach...</p>
-            <!-- Add more content about this project -->
+            <object class="pdf" 
+                data="adcfinal.pdf"
+                width="800"
+                height="500">
+            </object>
         </section>
     </main>
 
