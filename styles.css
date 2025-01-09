@@ -169,6 +169,35 @@ nav a:hover {
     background-color: #ff4500;
 }
 
+/* Form styling */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #ff4500;
+}
 /* Footer styles */
 footer {
     text-align: center;
@@ -194,4 +223,37 @@ a {
 
 a:hover {
     color: #ff4500;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Adjust to match your design */
+    z-index: 1000; /* Ensures the navbar is above other content */
+    padding: 10px 0;
+}
+
+body {
+    padding-top: 60px; /* Adjust based on the height of your navbar */
+}
+
+/* Adjusting the nav bar links for better visibility */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
