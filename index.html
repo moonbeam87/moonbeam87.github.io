@@ -110,7 +110,7 @@
                 <div class="card-item">
                     <img src="abbvie.jpg" alt="AbbVie">
                     <h3>AWS Developer Intern - AbbVie</h3>
-                    <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
+                    <p><strong>Jan 2022 – May 2022 | Champaign, IL</strong></p>
                     <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
                 </div>
             </div>
@@ -130,9 +130,18 @@
                             ADC, focusing on the residue amplifier, sub-ADC, and switched capacitor MDAC...</p>
                     </a>
                 </div>
-                </a>
 
-
+                <div class="card-item">
+                    <a href="nsu.html">
+                        <!-- <img src="vit.jpg" alt="ViT Encoder Design"> -->
+                        <h3>ViT Encoder Design</h3>
+                        <p><strong>Dates:</strong> March 2025</p>
+                        <p><strong>Class:</strong> ECE 598 - Advanced VLSI Design</p>
+                        <p>Designed a hardware-efficient ViT encoder using a systolic array for multi-head self-attention
+                            and feed-forward network operations...</p>
+                    </a>
+                </div>
+                
                 <div class="card-item">
                     <!-- <img src="ota_design.jpg" alt="OTA Design"> -->
                     <a href="adc.html"></a>
@@ -140,7 +149,7 @@
                     <p><strong>Dates:</strong> September 2024 – October 2024</p>
                     <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
                     <p>Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and unity-gain
-                        frequency exceeding 50 MHz...</p>
+                        frequency exceeding 50 MHz</p>
                 </div>
 
                 <div class="card-item">
@@ -265,7 +274,7 @@
                 message = 'Good Evening';
             }
 
-            greeting.innerHTML = `${message}, welcome to my portfolio!`;
+            greeting.innerHTML = `${message}!`;
         };
 
         // Light/Dark mode toggle
@@ -278,6 +287,7 @@
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
         }
+        
         // Form validation
         function validateForm() {
             const name = document.getElementById('name').value;

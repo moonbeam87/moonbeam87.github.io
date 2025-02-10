@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Transformer Encoder - Dev Patel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        header, footer {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        main {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .card h2, .card h3 {
+            color: #007bff;
+        }
+        .gallery img {
+            width: calc(50% - 10px);
+            margin: 5px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Vision Transformer Encoder Implementation</h2>
+            <p><strong>Course:</strong> 498 NSU - VLSI for Machine Learning</p>
+            <p><strong>Author:</strong> Dev Patel</p>
+            <p>This project focuses on implementing the encoder layer of a Vision Transformer (ViT) in Verilog. The encoder consists of three main components: <strong>Layer Normalization</strong>, <strong>Multi-Head Self-Attention (MHSA)</strong>, and a <strong>Feed-Forward Network (FFN)</strong>. The implementation is optimized for 8-bit fixed-point arithmetic.</p>
+        </section>
+
+        <section class="card">
+            <h3>Design Highlights</h3>
+            <p>
+                - <strong>Layer Normalization:</strong> Computes mean/variance for stable token input.<br>
+                - <strong>Multi-Head Self-Attention (MHSA):</strong> Uses systolic 2x2 matrix multiplication.<br>
+                - <strong>Feed-Forward Network (FFN):</strong> Two-layer MLP with ReLU activation.<br>
+                - <strong>Optimization:</strong> Fixed-point arithmetic (8-bit) for efficient hardware execution.<br>
+                - <strong>Implementation:</strong> Functional blocks tested in Verilog, integrated with Python verification.
+            </p>
+        </section>
+
+        <section class="card gallery">
+            <img src="layernorm.png" alt="Layer Normalization Block Diagram">
+            <img src="mhsa.png" alt="Multi-Head Self-Attention PE Diagram">
+            <img src="ffn.png" alt="Feed-Forward Network Structure">
+            <img src="vivado_waveform.png" alt="Vivado Waveform for Systolic Array">
+        </section>
+
+        <section class="card">
+            <h3>Implementation Details</h3>
+            <p>The encoder layer was divided into modular blocks:</p>
+            <ul>
+                <li><strong>Layer Normalization:</strong> Normalizes input tokens to zero mean, unit variance.</li>
+                <li><strong>MHSA:</strong> Implements dot-product attention with systolic 2x2 matrix multiplication.</li>
+                <li><strong>FFN:</strong> Processes tokens through two dense layers with ReLU activation.</li>
+            </ul>
+            <p>To overcome synthesis challenges, a hybrid approach was used where Verilog blocks were validated using Python simulation.</p>
+        </section>
+
+        <section class="card">
+            <h3>Feed-Forward Network (FFN)</h3>
+            <p>The FFN in the ViT encoder consists of two dense layers with ReLU activation in between. Each layer performs matrix-vector multiplication followed by bias addition, and the ReLU activation is applied to the output of the first layer:</p>
+            <ul>
+                <li><strong>First Layer:</strong> The input token is multiplied by a weight matrix, and a bias vector is added to produce the first output.</li>
+                <li><strong>ReLU Activation:</strong> The output of the first layer undergoes ReLU activation, introducing non-linearity to the model.</li>
+                <li><strong>Second Layer:</strong> The ReLU output is multiplied by another weight matrix and biased again to generate the final output of the FFN.</li>
+            </ul>
+            <p>Each layer is optimized for efficient hardware implementation, with 8-bit fixed-point precision to balance speed and resource usage. This allows the design to be hardware-friendly while maintaining model performance.</p>
+        </section>
+
+        <section class="card">
+            <h3>Systolic Matrix Multiplication</h3>
+            <p>The Multi-Head Self-Attention (MHSA) module uses systolic array architecture for efficient matrix multiplication. Systolic arrays allow for parallel processing of the matrix multiplication, which is crucial for high-speed operations in hardware implementations.</p>
+            <ul>
+                <li><strong>Matrix Partitioning:</strong> The large matrix is broken into smaller sub-matrices, which can be processed concurrently in a systolic array.</li>
+                <li><strong>Parallelism:</strong> Each processing element in the systolic array computes part of the matrix multiplication, with data flowing synchronously through the array in a pipelined fashion.</li>
+                <li><strong>2x2 Matrix Multiplier:</strong> The systolic array in this design uses 2x2 matrix multipliers to perform dot-product calculations for the attention mechanism, optimizing for hardware efficiency.</li>
+            </ul>
+            <p>This parallel approach significantly reduces computation time and is well-suited for deployment in high-performance embedded systems.</p>
+        </section>
+
+        <section class="card">
+            <h3>Challenges and Future Work</h3>
+            <p><strong>Challenges:</strong></p>
+            <ul>
+                <li>Ensuring precision in 8-bit fixed-point calculations.</li>
+                <li>Interfacing Verilog modules with Python simulation.</li>
+                <li>Debugging Vivado synthesis issues for systolic array operations.</li>
+            </ul>
+            <p><strong>Future Work:</strong></p>
+            <ul>
+                <li>Developing a seamless Python-Verilog integration framework.</li>
+                <li>Extending the design to multiple encoder layers.</li>
+                <li>Implementing optimizations like quantization-aware training.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Dev Patel</p>
+    </footer>
+</body>
+</html>
