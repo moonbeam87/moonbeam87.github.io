@@ -1,24 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Patel - Portfolio</title>
-    <title>Dev Patel</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS for Project Cards - No Expansion Specific Styles Needed Now */
+        #projects .card-item h3,
+        #projects .card-item p {
+            margin: 0 0 0.5em 0; /* Adjust spacing in summary */
+        }
+
+        .project-summary {
+            cursor: pointer; /* Indicate clickable summary - will be removed if wrapping in <a> */
+            padding: 1.25em; /* Ensure padding for clickable area - will be removed if wrapping in <a> */
+            display: block; /* Make summary block for click area - will be removed if wrapping in <a> */
+            text-decoration: none; /* Remove underline from link */
+            color: inherit; /* Inherit text color from parent */
+        }
+
+        /* Style adjustments as needed to fit Dimension template */
+        #projects .card-item {
+            padding: 0; /* Remove padding from card item itself */
+            border: 1px solid #ddd; /* Example border for card separation */
+            border-radius: 4px;
+            margin-bottom: 1.5em;
+            overflow: hidden; /* Clip content within rounded borders */
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">Dev Patel</div>
-                <div class="hamburger" onclick="toggleMenu()">
-                    &#9776; <!-- Unicode for a hamburger menu -->
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <header id="header">
+            <div class="logo">
+                <img src="devpatel.png" alt="Dev Patel" style="width: 115px; border-radius: 50%;">
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>Dev Patel</h1>
+                    <p>Interested in Analog/Mixed Signal Design, Embedded Systems, and More.</p>
+                    <p id="greeting" style="font-weight: normal;"></p>
                 </div>
-                <ul class="nav-links">
+            </div>
+            <nav>
+                <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -26,242 +61,262 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main>
-        <section id="welcome" class="card">
-            <img src="devpatel.png" alt="Dev Patel" class="profile-pic">
-            <h1>Dev Patel</h1>
-            <h1 id="greeting"></h1>
-            <p>Interested in Analog/Mixed Signal Design, Embedded Systems, and More.</p>
-        </section>
+        <div id="main">
 
-    <main class="container">
-        <section id="about" class="card">
-            <h2>About Me</h2>
-            <p>Hi there! I’m Dev Patel, an enthusiastic electrical engineering student specializing in <strong>analog/mixed signal chip design</strong>, <strong>embedded systems</strong>, and <strong>battery management</strong>. I thrive on tackling intricate engineering challenges and transforming ideas into impactful solutions using cutting-edge technology and innovative design.</p>
-            
-            <p>🚀 <strong>Experience that Speaks Volumes:</strong></p>
-            <p>From designing <strong>energy-efficient hardware</strong> to crafting <strong>embedded systems for power electronics</strong>, I’ve honed my skills at some of the most exciting companies:</p>
-            <ul>
-                <li><strong>Rivian</strong></li>
-                <li><strong>Rocket Lab USA</strong></li>
-                <li><strong>STMicroelectronics</strong></li>
-                <li>and more</li>
-            </ul>
-            
-            <p>💡 <strong>Driven by Purpose:</strong></p>
-            <p>I’m passionate about shaping the future of <strong>energy systems</strong>, <strong>automation</strong>, and <strong>embedded applications</strong>. Whether it's perfecting <strong>analog circuits</strong> or optimizing <strong>high-performance systems</strong>, I’m always seeking opportunities to collaborate and innovate in the field of electrical engineering.</p>
-        
-            <p><strong>Let’s connect and create the next big thing in technology together!</strong></p>
-        </section>
+            <article id="intro">
+                <h2 class="major">Welcome</h2>
+                <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+                <p>Welcome to my portfolio website! I am Dev Patel, an enthusiastic electrical engineering student
+                    specializing in analog/mixed signal chip design, embedded systems, and battery management. </p>
+                <p>Explore my journey through education, experience, projects, and skills. Feel free to contact me!</p>
+            </article>
 
-        <section id="education" class="card">
-            <h2>Education</h2>
-            <div class="card-content">
-                <img src="illinois.png" alt="University of Illinois Urbana Champaign">
-                <div class="text-content">
-                    <p><strong>University of Illinois Urbana Champaign</strong></p>
-                    <p>Masters+BS in Electrical Engineering, Minor in Computer Science</p>
-                    <p><strong>GPA:</strong> 3.6</p>
-                    <p>Notable Courses: Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing,
-                        Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design.</p>
+            <article id="about">
+                <h2 class="major">About Me</h2>
+                <p>Hi there! I’m Dev Patel, an enthusiastic electrical engineering student specializing in <strong>analog/mixed
+                        signal chip design</strong>, <strong>embedded systems</strong>, and <strong>battery management</strong>. I
+                    thrive on tackling intricate engineering challenges and transforming ideas into impactful solutions
+                    using cutting-edge technology and innovative design.</p>
+
+                <p>🚀 <strong>Experience that Speaks Volumes:</strong></p>
+                <p>From designing <strong>energy-efficient hardware</strong> to crafting <strong>embedded systems for power
+                        electronics</strong>, I’ve honed my skills at some of the most exciting companies:</p>
+                <ul class="alt">
+                    <li><strong>Rivian</strong></li>
+                    <li><strong>Rocket Lab USA</strong></li>
+                    <li><strong>STMicroelectronics</strong></li>
+                    <li>and more</li>
+                </ul>
+
+                <p>💡 <strong>Driven by Purpose:</strong></p>
+                <p>I’m passionate about shaping the future of <strong>energy systems</strong>, <strong>automation</strong>, and
+                    <strong>embedded applications</strong>. Whether it's perfecting <strong>analog circuits</strong> or
+                    optimizing <strong>high-performance systems</strong>, I’m always seeking opportunities to collaborate
+                    and innovate in the field of electrical engineering.</p>
+
+                <p><strong>Let’s connect and create the next big thing in technology together!</strong></p>
+            </article>
+
+            <article id="education">
+                <h2 class="major">Education</h2>
+                <div class="card-content">
+                    <span class="image main"><img src="illinois.png" alt="University of Illinois Urbana Champaign"
+                            style="width: 200px; margin-bottom: 1em;"></span>
+                    <div class="inner">
+                        <p><strong>University of Illinois Urbana Champaign</strong></p>
+                        <p>Masters+BS in Electrical Engineering, Minor in Computer Science</p>
+                        <p><strong>GPA:</strong> 3.6</p>
+                        <p>Notable Courses: Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing,
+                            Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </article>
 
-        <section id="experience" class="card">
-            <h2>Experience</h2>
-            <div class="card-grid">
-                <div class="card-item">
-                    <img src="rivian.jpg" alt="Rivian">
-                    <h3>Power Electromics Engineering Intern - Rivian</h3>
-                    <p><strong>Jan 2025 – Present | Champaign, IL</strong></p>
-                    <p>Currently interning part-time at Rivian.</p>
+            <article id="experience">
+                <h2 class="major">Experience</h2>
+                <div class="card-grid" style="display: flex; flex-direction: column; align-items: stretch;">
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <span class="image main"><img src="rivian.jpg" alt="Rivian" style="width: 150px;"></span>
+                        <div class="project-summary"> <h3>Power Electromics Engineering Intern - Rivian</h3>
+                            <p><strong>Jan 2025 – Present | Champaign, IL</strong></p>
+                            <p>Currently interning part-time at Rivian.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <span class="image main"><img src="rocketlab.jpg" alt="Rocket Lab USA"
+                                style="width: 150px;"></span>
+                        <div class="project-summary"> <h3>Space Systems Intern - Rocket Lab USA</h3>
+                            <p><strong>May 2024 – August 2024 | Long Beach, CA</strong></p>
+                            <p>Designed machine learning models using PyTorch to automate PCBA defect analysis...</p>
+                        </div>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <span class="image main"><img src="stmicro.jpg" alt="ST Microelectronics"
+                                style="width: 150px;"></span>
+                        <div class="project-summary"> <h3>Embedded Applications Engineer - ST Microelectronics</h3>
+                            <p><strong>June 2023 – December 2023 | Chicago, IL</strong></p>
+                            <p>Prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers...</p>
+                        </div>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <span class="image main"><img src="relyion.jpg" alt="RelyIon Energy"
+                                style="width: 150px;"></span>
+                        <div class="project-summary"> <h3>Embedded Battery Engineering Intern - RelyIon Energy</h3>
+                            <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
+                            <p>Developed software for a 480V High Voltage Energy Storage System using recycled batteries...</p>
+                        </div>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <span class="image main"><img src="abbvie.jpg" alt="AbbVie" style="width: 150px;"></span>
+                        <div class="project-summary"> <h3>AWS Developer Intern - AbbVie</h3>
+                            <p><strong>Jan 2022 – May 2022 | Champaign, IL</strong></p>
+                            <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
+                        </div>
+                    </div>
                 </div>
+            </article>
 
-                <div class="card-item">
-                    <img src="rocketlab.jpg" alt="Rocket Lab USA">
-                    <h3>Space Systems Intern - Rocket Lab USA</h3>
-                    <p><strong>May 2024 – August 2024 | Long Beach, CA</strong></p>
-                    <p>Designed machine learning models using PyTorch to automate PCBA defect analysis, reducing
-                        inspection times by over 2x. Developed embedded systems for ground support hardware, including a
-                        3-axis PCBA controller and custom battery pack screening.</p>
+            <article id="projects">
+                <h2 class="major">Projects</h2>
+                <div class="card-grid" style="display: flex; flex-direction: column; align-items: stretch;">
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="adc.html" class="project-summary"> <h3>Pipelined ADC Design</h3>
+                            <p><strong>Dates:</strong> December 2024</p>
+                            <p><strong>Class:</strong> ECE581 - Final Project</p>
+                            <p>Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit
+                                pipelined ADC, focusing on the residue amplifier, sub-ADC...</p>
+                        </a>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="nsu.html"  class="project-summary"> <h3>ViT Encoder Design</h3>
+                            <p><strong>Dates:</strong> March 2025</p>
+                            <p><strong>Class:</strong> ECE 598 - Advanced VLSI Design</p>
+                            <p>Designed a hardware-efficient ViT encoder using a systolic array for multi-head
+                                self-attention and feed-forward network operations...</p>
+                        </a>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="ota_design.html" class="project-summary"> <h3>Gain-boosted and Two-stage OTA Design</h3>
+                            <p><strong>Dates:</strong> September 2024 – October 2024</p>
+                            <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
+                            <p>Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and
+                                unity-gain frequency exceeding 50 MHz</p>
+                        </a>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="ldo.html" class="project-summary"> <h3>Low Dropout Regulator (LDO) Design</h3>
+                            <p><strong>Dates:</strong> April 2024 – May 2024</p>
+                            <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
+                            <p>Designed an LDO with a telescopic cascode OTA, optimizing biasing and compensation for
+                                high output swing and stability...</p>
+                        </a>
+                    </div>
+
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="car.html" class="project-summary"> <h3>Autonomous Car Algorithm Development</h3>
+                            <p><strong>Dates:</strong> May 2024</p>
+                            <p><strong>Class:</strong> ECE484 - Autonomous Driving Systems</p>
+                            <p>Developed an autonomous car algorithm that raced around the Shanghai International Circuit
+                                using ROS, CARLA, RRTs, and Python...</p>
+                        </a>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="bms.html" class="project-summary"> <h3>STM32 F4 Based Active Balancing BMS</h3>
+                            <p><strong>Club:</strong> EV Concept</p>
+                            <p><strong>Dates:</strong> October 2023 – March 2024</p>
+                            <p>Developed an active balancing Battery Management System (BMS) for a custom-built 48V
+                                lithium-ion battery pack...</p>
+                        </a>
+                    </div>
+
+                    <div class="card-item" style="margin-bottom: 1.5em;">
+                        <a href="serdes.html" class="project-summary"> <h3>16-bit SERDES with PRBS</h3>
+                            <p><strong>Dates:</strong> November 2023 – December 2023</p>
+                            <p><strong>Class:</strong> Digital Integrated Circuit Design</p>
+                            <p>Designed a high-speed clock divider and serializer/deserializer (SERDES) systems,
+                                progressing from high-level schematics to finalized layouts and simulations...</p>
+                        </a>
+                    </div>
                 </div>
-
-                <div class="card-item">
-                    <img src="stmicro.jpg" alt="ST Microelectronics">
-                    <h3>Embedded Applications Engineer - ST Microelectronics</h3>
-                    <p><strong>June 2023 – December 2023 | Chicago, IL</strong></p>
-                    <p>Prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers. Developed
-                        firmware for MPPT algorithms and implemented control on STM32 microcontrollers.</p>
-                </div>
-
-                <div class="card-item">
-                    <img src="relyion.jpg" alt="RelyIon Energy">
-                    <h3>Embedded Battery Engineering Intern - RelyIon Energy</h3>
-                    <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
-                    <p>Developed software for a 480V High Voltage Energy Storage System using recycled batteries,
-                        achieving a 5x cost reduction in battery pack balancing systems.</p>
-                </div>
-
-                <div class="card-item">
-                    <img src="abbvie.jpg" alt="AbbVie">
-                    <h3>AWS Developer Intern - AbbVie</h3>
-                    <p><strong>Jan 2022 – May 2022 | Champaign, IL</strong></p>
-                    <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="card">
-            <h2>Projects</h2>
-            <div class="card-grid">
-
-                <div class="card-item">
-                    <a href="adc.html">
-                        <!-- <img src="pipelines_adc.jpg" alt="Pipelined ADC Design"> -->
-                        <h3>Pipelined ADC Design</h3>
-                        <p><strong>Dates:</strong> December 2024</p>
-                        <p><strong>Class:</strong> ECE581 - Final Project</p>
-                        <p>Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit pipelined
-                            ADC, focusing on the residue amplifier, sub-ADC, and switched capacitor MDAC...</p>
-                    </a>
-                </div>
-
-                <div class="card-item">
-                    <a href="nsu.html">
-                        <!-- <img src="vit.jpg" alt="ViT Encoder Design"> -->
-                        <h3>ViT Encoder Design</h3>
-                        <p><strong>Dates:</strong> March 2025</p>
-                        <p><strong>Class:</strong> ECE 598 - Advanced VLSI Design</p>
-                        <p>Designed a hardware-efficient ViT encoder using a systolic array for multi-head self-attention
-                            and feed-forward network operations...</p>
-                    </a>
-                </div>
-                
-                <div class="card-item">
-                    <!-- <img src="ota_design.jpg" alt="OTA Design"> -->
-                    <a href="adc.html"></a>
-                    <h3>Gain-boosted and Two-stage OTA Design</h3>
-                    <p><strong>Dates:</strong> September 2024 – October 2024</p>
-                    <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
-                    <p>Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and unity-gain
-                        frequency exceeding 50 MHz</p>
-                </div>
-
-                <div class="card-item">
-                    <a href="ldo.html">
-
-                        <!-- <img src="ldo_design.jpg" alt="LDO Design"> -->
-                        <h3>Low Dropout Regulator (LDO) Design</h3>
-                        <p><strong>Dates:</strong> April 2024 – May 2024</p>
-                        <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
-                        <p>Designed an LDO with a telescopic cascode OTA, optimizing biasing and compensation for high
-                            output swing and stability...</p>
-                    </a>
-                </div>
+            </article>
 
 
-                <div class="card-item">
-                    <a href="car.html">
+            <article id="skills">
+                <h2 class="major">Skills & Certifications</h2>
+                <section>
+                    <h3 class="major">Technical Skills</h3>
+                    <ul class="alt">
+                        <li><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso</li>
+                        <li><strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink
+                        </li>
+                        <li><strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog</li>
+                        <li><strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate,
+                            Professional,
+                            Security Specialty)</li>
+                    </ul>
+                </section>
 
-                    <!-- <img src="autonomous_car.jpg" alt="Autonomous Car Algorithm"> -->
-                    <h3>Autonomous Car Algorithm Development</h3>
-                    <p><strong>Dates:</strong> May 2024</p>
-                    <p><strong>Class:</strong> ECE484 - Autonomous Driving Systems</p>
-                    <p>Developed an autonomous car algorithm that raced around the Shanghai International Circuit using
-                        ROS, CARLA, RRTs, and Python...</p>
-                    </a>
-                </div>
+                <section>
+                    <h3 class="major">AWS Certifications</h3>
+                    <ul class="alt">
+                        <li>Amazon Web Services Certified Solutions Architect - Associate</li>
+                        <li>Amazon Web Services Certified Solutions Architect - Professional</li>
+                        <li>Amazon Web Services Certified Security - Specialty</li>
+                    </ul>
+                </section>
 
-                <div class="card-item">
-                    <a href="bms.html">
+                <section>
+                    <h3 class="major">Hobbies & Interests</h3>
+                    <ul class="alt">
+                        <li>Rock Climbing</li>
+                        <li>Electric cars and Batteries</li>
+                        <li>NFL</li>
+                        <li>Formula 1</li>
+                    </ul>
+                </section>
+            </article>
 
-                    <!-- <img src="bms.jpg" alt="BMS Development"> -->
-                    <h3>STM32 F4 Based Active Balancing BMS</h3>
-                    <p><strong>Club:</strong> EV Concept</p>
-                    <p><strong>Dates:</strong> October 2023 – March 2024</p>
-                    <p>Developed an active balancing Battery Management System (BMS) for a custom-built 48V lithium-ion
-                        battery pack...</p>
-                    </a>
-                </div>
 
-                <div class="card-item">
-                    <a href="serdes.html">
+            <article id="contact">
+                <h2 class="major">Contact</h2>
+                <form method="post" action="#" onsubmit="return validateForm()">
+                    <div class="fields">
+                        <div class="field half">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your Name" />
+                        </div>
+                        <div class="field half">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Your Email" />
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" class="primary" /></li>
+                        <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                </form>
+                <ul class="icons">
+                    <li><a href="https://linkedin.com/in/dev-patel-aws" target="_blank"
+                            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/moonbeam87" target="_blank" class="icon brands fa-github"><span
+                                class="label">GitHub</span></a></li>
+                </ul>
+            </article>
 
-                    <!-- <img src="serdes.jpg" alt="SERDES Design"> -->
-                    <h3>16-bit SERDES with PRBS</h3>
-                    <p><strong>Dates:</strong> November 2023 – December 2023</p>
-                    <p><strong>Class:</strong> Digital Integrated Circuit Design</p>
-                    <p>Designed a high-speed clock divider and serializer/deserializer (SERDES) systems, progressing
-                        from high-level schematics to finalized layouts and simulations...</p>
-                    </a>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <section id="aws-certifications" class="card">
-            <h2>AWS Certifications</h2>
-            <ul>
-                <li>Amazon Web Services Certified Solutions Architect - Associate</li>
-                <li>Amazon Web Services Certified Solutions Architect - Professional</li>
-                <li>Amazon Web Services Certified Security - Specialty</li>
-            </ul>
-        </section>
+        <footer id="footer">
+            <p class="copyright">&copy; 2025 Dev Patel. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
 
-        <section id="hobbies" class="card">
-            <h2>Hobbies & Interests</h2>
-            <ul>
-                <li>Rock Climbing</li>
-                <li>Electric cars and Batteries</li>
-                <li>NFL</li>
-                <li>Formula 1</li>
-            </ul>
-        </section>
+    </div>
 
-        <section id="skills" class="card">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso</li>
-                <li><strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink</li>
-                <li><strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog</li>
-                <li><strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate, Professional,
-                    Security Specialty)</li>
-            </ul>
-        </section>
+    <div id="bg"></div>
 
-        <section id="contact" class="card">
-            <h2>Contact</h2>
-            <form onsubmit="return validateForm()">
-                <input type="text" id="name" placeholder="Your Name">
-                <input type="email" id="email" placeholder="Your Email">
-                <textarea id="message" placeholder="Your Message"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dev-patel-aws" target="_blank">LinkedIn</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/moonbeam87" target="_blank">GitHub</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Dev Patel</p>
-    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
         // Dynamic greeting based on time of day
-        window.onload = function() {
+        window.onload = function () {
             const greeting = document.getElementById('greeting');
             const hour = new Date().getHours();
             let message = 'Hello';
@@ -277,18 +332,7 @@
             greeting.innerHTML = `${message}!`;
         };
 
-        // Light/Dark mode toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.getElementById('theme-toggle');
-            toggleButton.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-            });
-        });
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-        
-        // Form validation
+        // Form validation (copiato dal tuo script, adattato per il template)
         function validateForm() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -302,25 +346,9 @@
             return true;
         }
 
-        // Lazy loading for images
-        document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = document.querySelectorAll("img.lazy");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove("lazy");
-                        observer.unobserve(img);
-                    }
-                });
-            });
 
-            lazyImages.forEach(img => {
-                observer.observe(img);
-            });
-        });
     </script>
+
 </body>
 
 </html>
