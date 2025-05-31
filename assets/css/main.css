@@ -1666,3 +1666,153 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		body {
+			background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%) !important;
+			color: #222 !important;
+		}
+		#main article {
+			background-color: rgba(255,255,255,0.92) !important;
+			color: #222 !important;
+			box-shadow: 0 4px 32px 0 rgba(31,38,135,0.07);
+			border-radius: 12px;
+			animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
+		}
+		@keyframes fadeInUp {
+			from { opacity: 0; transform: translateY(40px);}
+			to { opacity: 1; transform: translateY(0);}
+		}
+
+		/* Header */
+		#header {
+			background: rgba(255,255,255,0.97) !important;
+			color: #222 !important;
+			box-shadow: 0 8px 32px 0 rgba(31,38,135,0.07);
+			border-radius: 0 0 24px 24px;
+		}
+		#header .logo {
+			border: 1px solid #e0e7ef !important;
+		}
+		#header .logo img {
+			border: 3px solid #e0e7ef !important;
+			box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+			transition: transform 0.8s cubic-bezier(.4,0,.2,1);
+		}
+		#header .logo img:hover {
+			transform: scale(1.08) rotate(-3deg);
+		}
+		#header .content {
+			border-color: #e0e7ef !important;
+		}
+		#header nav ul {
+			border: 1px solid #e0e7ef !important;
+			background: #f8fafc !important;
+		}
+		#header nav ul li {
+			border-left: 1px solid #e0e7ef !important;
+		}
+		#header nav ul li a {
+			color: #222 !important;
+			background: transparent !important;
+			border-radius: 8px;
+			transition: background 0.3s, color 0.3s;
+		}
+		#header nav ul li a:hover {
+			background: #e0e7ef !important;
+			color: #0077ff !important;
+		}
+
+		/* Headings */
+		h1, h2, h3, h4, h5, h6 {
+			color: #111 !important;
+			text-shadow: 0 2px 8px rgba(200,220,255,0.04);
+		}
+		h2.major, h1.major {
+			border-bottom: solid 1px #e0e7ef !important;
+		}
+		h2.major:after {
+			content: '';
+			display: block;
+			width: 60px;
+			height: 3px;
+			margin: 12px auto 0;
+			background: linear-gradient(90deg, #0077ff 0%, #c7d2fe 100%);
+			border-radius: 2px;
+			animation: slideIn 1s cubic-bezier(.4,0,.2,1);
+		}
+		@keyframes slideIn {
+			from { width: 0; opacity: 0;}
+			to { width: 60px; opacity: 1;}
+		}
+
+		/* Cards, boxes, etc */
+		.card-item, .card, .box {
+			background: #fff !important;
+			border: 1px solid #e0e7ef !important;
+			border-radius: 18px !important;
+			box-shadow: 0 4px 24px 0 rgba(31,38,135,0.07) !important;
+			color: #222 !important;
+			transition: box-shadow 0.4s, transform 0.4s;
+			overflow: hidden;
+		}
+		.card-item:hover, .card:hover, .box:hover {
+			box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12) !important;
+			transform: translateY(-6px) scale(1.02);
+		}
+
+		/* Inputs & forms */
+		input, textarea, select {
+			background: #f3f6fa !important;
+			color: #222 !important;
+			border: 1px solid #e0e7ef !important;
+			border-radius: 8px !important;
+			transition: border 0.3s, box-shadow 0.3s;
+		}
+		input:focus, textarea:focus, select:focus {
+			border: 1.5px solid #0077ff !important;
+			box-shadow: 0 0 0 2px #c7d2fe;
+			outline: none;
+		}
+		label {
+			color: #222 !important;
+		}
+
+		/* Buttons */
+		input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+			background: linear-gradient(90deg, #0077ff 0%, #c7d2fe 100%) !important;
+			color: #fff !important;
+			border: none !important;
+			border-radius: 8px !important;
+			box-shadow: 0 2px 8px rgba(0,119,255,0.08);
+			font-weight: 600;
+			transition: background 0.3s, box-shadow 0.3s;
+		}
+		input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover, .button:hover {
+			background: linear-gradient(90deg, #005fcc 0%, #a5b4fc 100%) !important;
+			box-shadow: 0 4px 16px rgba(0,119,255,0.12);
+		}
+
+		/* Lists */
+		ul.alt li {
+			background: #f3f6fa !important;
+			border-radius: 6px !important;
+			color: #222 !important;
+			border-top: 1px solid #e0e7ef !important;
+		}
+
+		/* Misc */
+		strong, b {
+			color: #222 !important;
+		}
+		blockquote {
+			border-left: solid 4px #0077ff !important;
+			color: #222 !important;
+			background: #f3f6fa !important;
+		}
+		::-webkit-scrollbar {
+			width: 10px;
+			background: #e0e7ef;
+		}
+		::-webkit-scrollbar-thumb {
+			background: #c7d2fe;
+			border-radius: 8px;
+		}
