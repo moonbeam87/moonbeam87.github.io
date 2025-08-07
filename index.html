@@ -1,142 +1,828 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Patel - Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* CSS for Project Cards - No Expansion Specific Styles Needed Now */
-        #projects .card-item h3,
-        #projects .card-item p {
-            margin: 0 0 0.5em 0; /* Adjust spacing in summary */
+        :root {
+            --primary-color: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --accent-color: #06b6d4;
+            --accent-light: #22d3ee;
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
-
-        .project-summary {
-            cursor: pointer; /* Indicate clickable summary - will be removed if wrapping in <a> */
-            padding: 1.25em; /* Ensure padding for clickable area - will be removed if wrapping in <a> */
-            display: block; /* Make summary block for click area - will be removed if wrapping in <a> */
-            text-decoration: none; /* Remove underline from link */
-            color: inherit; /* Inherit text color from parent */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        /* Style adjustments as needed to fit Dimension template */
-        #projects .card-item {
-            padding: 0; /* Remove padding from card item itself */
-            border: 1px solid #ddd; /* Example border for card separation */
-            border-radius: 4px;
-            margin-bottom: 1.5em;
-            overflow: hidden; /* Clip content within rounded borders */
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--gradient-bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile menu toggle */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            padding: 0 2rem;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        .hero-image {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            background: var(--gradient-primary);
+            padding: 4px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .hero-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .greeting {
+            display: block;
+            font-size: 2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        
+        .name {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+        
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--glass-bg);
+            border-color: var(--primary-color);
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .scroll-indicator {
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--text-muted);
+            border-radius: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .scroll-indicator i {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--text-muted);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .companies {
+            margin-top: 2rem;
+        }
+        
+        .companies h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .company-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .company-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        /* Education Section */
+        .education-content {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .education-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+        
+        .university-logo {
+            flex-shrink: 0;
+        }
+        
+        .university-logo img {
+            width: 120px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .education-details h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .degree {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gpa {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .courses h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .course-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .course-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .course-tag:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .special-project h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .special-project p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .greeting {
+                font-size: 1.5rem;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .education-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            
+            .course-tags {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .company-tags {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
-<body class="is-preload">
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dev Patel</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-    <div id="wrapper">
-
-        <header id="header">
-            <div class="logo">
-                <img src="devpatel.png" alt="Dev Patel" style="width: 115px; border-radius: 50%;">
-            </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Dev Patel</h1>
-                    <p>Interested in Analog/Mixed Signal Design, Embedded Systems, and More.</p>
-                    <p id="greeting" style="font-weight: normal;"></p>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#experience">Work</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div id="main">
-
-            <article id="intro">
-                <h2 class="major">Welcome</h2>
-                <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-                <p>Welcome to my portfolio website! I am Dev Patel, an enthusiastic electrical engineering student
-                    specializing in analog/mixed signal chip design, embedded systems, and battery management. </p>
-                <p>Explore my journey through education, experience, projects, and skills. Feel free to contact me!</p>
-            </article>
-
-            <article id="about">
-                <h2 class="major">About Me</h2>
-                <p>Hi there! I’m Dev Patel, an enthusiastic electrical engineering student specializing in <strong>analog/mixed
-                        signal chip design</strong>, <strong>embedded systems</strong>, and <strong>battery management</strong>. I
-                    thrive on tackling intricate engineering challenges and transforming ideas into impactful solutions
-                    using cutting-edge technology and innovative design.</p>
-
-                <p>🚀 <strong>Experience that Speaks Volumes:</strong></p>
-                <p>From designing <strong>energy-efficient hardware</strong> to crafting <strong>embedded systems for power
-                        electronics</strong>, I’ve honed my skills at some of the most exciting companies:</p>
-                <ul class="alt">
-                    <li><strong>Apple</strong></li>
-                    <li><strong>Rivian</strong></li>
-                    <li><strong>Rocket Lab USA</strong></li>
-                    <li><strong>STMicroelectronics</strong></li>
-                    <li>and more</li>
-                </ul>
-
-                <p>💡 <strong>Driven by Purpose:</strong></p>
-                <p>I’m passionate about shaping the future of <strong>energy systems</strong>, <strong>automation</strong>, and
-                    <strong>embedded applications</strong>. Whether it's perfecting <strong>analog circuits</strong> or
-                    optimizing <strong>high-performance systems</strong>, I’m always seeking opportunities to collaborate
-                    and innovate in the field of electrical engineering.</p>
-
-                <p><strong>Let’s connect and create the next big thing in technology together!</strong></p>
-            </article>
-
-            <article id="education">
-                <h2 class="major">Education</h2>
-                <div class="card-content">
-                    <span class="image main"><img src="illinois.png" alt="University of Illinois Urbana Champaign"
-                            style="width: 200px; margin-bottom: 1em;"></span>
-                    <div class="inner">
-                        <p><strong>University of Illinois Urbana Champaign</strong></p>
-                        <p>Masters+BS in Electrical Engineering, Minor in Computer Science</p>
-                        <p><strong>GPA:</strong> 3.6</p>
-                        <p>Notable Courses: Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing,
-                            Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design.</p>
-                        <p>Finishing Tapeout of a DVFS CPU in the Fall of 2025:  <a href="https://www.overleaf.com/read/mbrtjvcwqjwk#1da550">Check it out here!</a></p>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="devpatel.png" alt="Dev Patel">
+                    <div class="hero-badge">
+                        <i class="fas fa-microchip"></i>
                     </div>
                 </div>
-            </article>
+                <h1 class="hero-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Dev Patel</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Electrical Engineering Student specializing in <span class="highlight">Analog/Mixed Signal Design</span>, 
+                    <span class="highlight">Embedded Systems</span>, and <span class="highlight">Battery Management</span>
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Internships</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3.6</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#experience" class="btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        View Experience
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about creating innovative solutions in electrical engineering</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Hi there! I'm Dev Patel, an enthusiastic electrical engineering student specializing in <span class="highlight">analog/mixed signal chip design</span>, <span class="highlight">embedded systems</span>, and <span class="highlight">battery management</span>.</p>
+                    
+                    <p>I thrive on tackling intricate engineering challenges and transforming ideas into impactful solutions using cutting-edge technology and innovative design.</p>
+                    
+                    <div class="companies">
+                        <h4>🚀 Experience at Leading Companies:</h4>
+                        <div class="company-tags">
+                            <span class="company-tag">Apple</span>
+                            <span class="company-tag">Rivian</span>
+                            <span class="company-tag">Rocket Lab USA</span>
+                            <span class="company-tag">STMicroelectronics</span>
+                            <span class="company-tag">RelyIon Energy</span>
+                            <span class="company-tag">AbbVie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h4>Analog/Mixed Signal Design</h4>
+                        <p>Expertise in designing high-performance analog circuits and mixed-signal systems</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Embedded Systems</h4>
+                        <p>Developing efficient embedded solutions for complex engineering challenges</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                        <h4>Battery Management</h4>
+                        <p>Innovative approaches to energy storage and battery management systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic journey in electrical engineering and computer science</p>
+            </div>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="university-logo">
+                        <img src="illinois.png" alt="University of Illinois Urbana Champaign">
+                    </div>
+                    <div class="education-details">
+                        <h3>University of Illinois Urbana Champaign</h3>
+                        <p class="degree">Masters+BS in Electrical Engineering, Minor in Computer Science</p>
+                        <p class="gpa"><strong>GPA:</strong> 3.6</p>
+                        <div class="courses">
+                            <h4>Notable Courses:</h4>
+                            <div class="course-tags">
+                                <span class="course-tag">Digital Integrated Circuit Design</span>
+                                <span class="course-tag">FPGA Applications</span>
+                                <span class="course-tag">Digital Signal Processing</span>
+                                <span class="course-tag">Advanced Analog IC Design</span>
+                                <span class="course-tag">Machine Learning in VLSI</span>
+                            </div>
+                        </div>
+                        <div class="special-project">
+                            <h4>🏆 Current Project:</h4>
+                            <p>Finishing Tapeout of a DVFS CPU in the Fall of 2025</p>
+                            <a href="https://www.overleaf.com/read/mbrtjvcwqjwk#1da550" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Check it out here!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
             <article id="experience">
                 <h2 class="major">Experience</h2>
                 <div class="card-grid" style="display: flex; flex-direction: column; align-items: stretch;">
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="rivian.jpg" alt="Apple" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>SEG - Analog Mixed Signal (AMS) CAD Design Intern</h3>
-                            <p><strong>May 2025 – Present | Sunnyvale, CA</strong></p>
-                            <p>Currently interning at Apple as part of the Silicon Engineering Group</p>
+                        <div class="project-summary"> <h3>Analog Mixed Signal (AMS) CAD Design Intern - <a href="https://www.apple.com" target="_blank" style="color: #00d4ff;">Apple</a></h3>
+                            <p><strong>May 2025 – Present | Cupertino, CA</strong></p>
+                            <p>Working in the Silicon Engineering Group on advanced analog/mixed-signal CAD tools and methodologies for next-generation chip designs. Developing automation solutions and design flows for high-performance silicon development.</p>
                         </div>
                     </div>
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="rivian.jpg" alt="Rivian" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Power Electromics Engineering Intern - Rivian</h3>
+                        <div class="project-summary"> <h3>Power Electromics Engineering Intern - <a href="https://rivian.com" target="_blank" style="color: #00d4ff;">Rivian</a></h3>
                             <p><strong>Jan 2025 – May 2025 | Champaign, IL</strong></p>
                             <p>Developed tolerance and noise analysis on various Power circuits, designed CAN based software for switching inverter testing</p>
                         </div>
                     </div>
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="rocketlab.jpg" alt="Rocket Lab USA" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Space Systems Intern - Rocket Lab USA</h3>
+                        <div class="project-summary"> <h3>Space Systems Intern - <a href="https://www.rocketlabusa.com" target="_blank" style="color: #00d4ff;">Rocket Lab USA</a></h3>
                             <p><strong>May 2024 – August 2024 | Long Beach, CA</strong></p>
                             <p>Designed machine learning models using PyTorch to automate PCBA defect analysis.</p>
                         </div>
@@ -144,7 +830,7 @@
 
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="stmicro.jpg" alt="ST Microelectronics" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Embedded Applications Engineer - ST Microelectronics</h3>
+                        <div class="project-summary"> <h3>Embedded Applications Engineer - <a href="https://www.st.com" target="_blank" style="color: #00d4ff;">ST Microelectronics</a></h3>
                             <p><strong>June 2023 – December 2023 | Chicago, IL</strong></p>
                             <p>Designed and prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers.</p>
                         </div>
@@ -152,7 +838,7 @@
 
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="relyion.jpg" alt="RelyIon Energy" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Embedded Battery Engineering Intern - RelyIon Energy</h3>
+                        <div class="project-summary"> <h3>Embedded Battery Engineering Intern - <a href="https://www.relyionenergy.com" target="_blank" style="color: #00d4ff;">RelyIon Energy</a></h3>
                             <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
                             <p>Developed embedded hardware and software for a 480V High Voltage Energy Storage System using recycled batteries.</p>
                         </div>
@@ -160,7 +846,7 @@
 
                     <div class="card-item" style="margin-bottom: 1.5em;">
                         <!-- <span class="image main"><img src="abbvie.jpg" alt="AbbVie" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>AWS Developer Intern - AbbVie</h3>
+                        <div class="project-summary"> <h3>AWS Developer Intern - <a href="https://www.abbvie.com" target="_blank" style="color: #00d4ff;">AbbVie</a></h3>
                             <p><strong>Jan 2022 – May 2022 | Champaign, IL</strong></p>
                             <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
                         </div>
@@ -271,6 +957,70 @@
                         <li>Formula 1</li>
                     </ul>
                 </section>
+            </article>
+
+            <article id="resume">
+                <h2 class="major">Resume</h2>
+                <p>You can view or download my full resume using the options below:</p>
+                
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="#" class="button primary" onclick="alert('Resume download feature coming soon!')" style="margin: 0.5rem;">Download PDF Resume</a>
+                    <a href="https://linkedin.com/in/dev-patel-aws" target="_blank" class="button" style="margin: 0.5rem;">View LinkedIn Profile</a>
+                </div>
+                
+                <div class="resume-content" style="text-align: left; background: rgba(40, 40, 40, 0.8); padding: 2rem; border-radius: 8px; border: 1px solid #444;">
+                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Dev Patel</h3>
+                    <p style="margin-bottom: 2rem; color: #ccc;">Electrical Engineering Student | Analog/Mixed Signal Design | Embedded Systems</p>
+                    
+                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Education</h4>
+                    <p><strong>University of Illinois Urbana Champaign</strong><br>
+                    Masters+BS in Electrical Engineering, Minor in Computer Science<br>
+                    GPA: 3.6<br>
+                    <em>Notable Courses:</em> Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing, Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design</p>
+                    
+                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Experience</h4>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong style="color: #00d4ff;">Apple</strong> - Analog Mixed Signal (AMS) CAD Design Intern<br>
+                        <em>May 2025 – Present | Cupertino, CA</em><br>
+                        Working in the Silicon Engineering Group on advanced analog/mixed-signal CAD tools and methodologies for next-generation chip designs.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong style="color: #00d4ff;">Rivian</strong> - Power Electronics Engineering Intern<br>
+                        <em>Jan 2025 – May 2025 | Champaign, IL</em><br>
+                        Developed tolerance and noise analysis on various Power circuits, designed CAN based software for switching inverter testing.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong style="color: #00d4ff;">Rocket Lab USA</strong> - Space Systems Intern<br>
+                        <em>May 2024 – August 2024 | Long Beach, CA</em><br>
+                        Designed machine learning models using PyTorch to automate PCBA defect analysis.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong style="color: #00d4ff;">ST Microelectronics</strong> - Embedded Applications Engineer<br>
+                        <em>June 2023 – December 2023 | Chicago, IL</em><br>
+                        Designed and prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers.</p>
+                    </div>
+                    
+                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Technical Skills</h4>
+                    <p><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso<br>
+                    <strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink<br>
+                    <strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog<br>
+                    <strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate, Professional, Security Specialty)</p>
+                    
+                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Key Projects</h4>
+                    <p>• Pipelined ADC Design - 20Msamples/sec 1.5b/stage 12-bit pipelined ADC<br>
+                    • ViT Encoder Design - Hardware-efficient Vision Transformer encoder<br>
+                    • STM32 F4 Based Active Balancing BMS - Custom 48V lithium-ion battery management system<br>
+                    • 16-bit SERDES with PRBS - High-speed serializer/deserializer systems</p>
+                    
+                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Certifications</h4>
+                    <p>• AWS Certified Solutions Architect - Associate<br>
+                    • AWS Certified Solutions Architect - Professional<br>
+                    • AWS Certified Security - Specialty</p>
+                </div>
             </article>
 
 
