@@ -576,6 +576,452 @@
             transform: translateX(5px);
         }
         
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .experience-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+        
+        .experience-card:hover::before {
+            opacity: 1;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        
+        .company-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .role {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .experience-meta {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .duration, .location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .duration {
+            font-weight: 600;
+        }
+        
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .experience-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-link a:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+        
+        .project-card:hover::before {
+            opacity: 1;
+        }
+        
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .project-class {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .project-date {
+            font-size: 0.85rem;
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .skills-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .skills-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
+        }
+        
+        .skills-category:hover::before {
+            opacity: 1;
+        }
+        
+        .skills-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .skills-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: white;
+        }
+        
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skills-list li {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .skills-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .skills-list li:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .skill-name {
+            font-weight: 500;
+        }
+        
+        .skill-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+        
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form:hover {
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-color);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .contact-info-item i {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
@@ -678,20 +1124,6 @@
                     Electrical Engineering Student specializing in <span class="highlight">Analog/Mixed Signal Design</span>, 
                     <span class="highlight">Embedded Systems</span>, and <span class="highlight">Battery Management</span>
                 </p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Internships</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">3.6</div>
-                        <div class="stat-label">GPA</div>
-                    </div>
-                </div>
                 <div class="hero-actions">
                     <a href="#experience" class="btn-primary">
                         <i class="fas fa-briefcase"></i>
@@ -746,10 +1178,10 @@
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <h4>Embedded Systems</h4>
-                        <p>Developing efficient embedded solutions for complex engineering challenges</p>
+                        <h4>Power Electronics</h4>
+                        <p>Developing efficient power conversion systems and advanced electrical circuits</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -803,256 +1235,449 @@
         </div>
     </section>
 
-            <article id="experience">
-                <h2 class="major">Experience</h2>
-                <div class="card-grid" style="display: flex; flex-direction: column; align-items: stretch;">
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="rivian.jpg" alt="Apple" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Analog Mixed Signal (AMS) CAD Design Intern - <a href="https://www.apple.com" target="_blank" style="color: #00d4ff;">Apple</a></h3>
-                            <p><strong>May 2025 – Present | Cupertino, CA</strong></p>
-                            <p>Working in the Silicon Engineering Group on advanced analog/mixed-signal CAD tools and methodologies for next-generation chip designs. Developing automation solutions and design flows for high-performance silicon development.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Professional journey across leading technology companies</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>Apple</h3>
+                            <p class="role">Analog Mixed Signal (AMS) CAD Design Intern</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">May 2025 – Present</span>
+                            <span class="location">Cupertino, CA</span>
                         </div>
                     </div>
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="rivian.jpg" alt="Rivian" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Power Electromics Engineering Intern - <a href="https://rivian.com" target="_blank" style="color: #00d4ff;">Rivian</a></h3>
-                            <p><strong>Jan 2025 – May 2025 | Champaign, IL</strong></p>
-                            <p>Developed tolerance and noise analysis on various Power circuits, designed CAN based software for switching inverter testing</p>
-                        </div>
-                    </div>
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="rocketlab.jpg" alt="Rocket Lab USA" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Space Systems Intern - <a href="https://www.rocketlabusa.com" target="_blank" style="color: #00d4ff;">Rocket Lab USA</a></h3>
-                            <p><strong>May 2024 – August 2024 | Long Beach, CA</strong></p>
-                            <p>Designed machine learning models using PyTorch to automate PCBA defect analysis.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="stmicro.jpg" alt="ST Microelectronics" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Embedded Applications Engineer - <a href="https://www.st.com" target="_blank" style="color: #00d4ff;">ST Microelectronics</a></h3>
-                            <p><strong>June 2023 – December 2023 | Chicago, IL</strong></p>
-                            <p>Designed and prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="relyion.jpg" alt="RelyIon Energy" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>Embedded Battery Engineering Intern - <a href="https://www.relyionenergy.com" target="_blank" style="color: #00d4ff;">RelyIon Energy</a></h3>
-                            <p><strong>May 2022 – August 2022 | Santa Clara, CA</strong></p>
-                            <p>Developed embedded hardware and software for a 480V High Voltage Energy Storage System using recycled batteries.</p>
-                        </div>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <!-- <span class="image main"><img src="abbvie.jpg" alt="AbbVie" style="width: 150px;"></span> -->
-                        <div class="project-summary"> <h3>AWS Developer Intern - <a href="https://www.abbvie.com" target="_blank" style="color: #00d4ff;">AbbVie</a></h3>
-                            <p><strong>Jan 2022 – May 2022 | Champaign, IL</strong></p>
-                            <p>Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article id="projects">
-                <h2 class="major">Projects</h2>
-                <div class="card-grid" style="display: flex; flex-direction: column; align-items: stretch;">
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="adc.html" class="project-summary"> <h3>Pipelined ADC Design</h3>
-                            <p><strong>Dates:</strong> December 2024</p>
-                            <p><strong>Class:</strong> ECE581 - Final Project</p>
-                            <p>Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit
-                                pipelined ADC, focusing on the residue amplifier, sub-ADC...</p>
-                        </a>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="nsu.html"  class="project-summary"> <h3>ViT Encoder Design</h3>
-                            <p><strong>Dates:</strong> March 2025</p>
-                            <p><strong>Class:</strong> ECE 598 - Advanced VLSI Design</p>
-                            <p>Designed a hardware-efficient ViT encoder using a systolic array for multi-head
-                                self-attention and feed-forward network operations...</p>
-                        </a>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="ota_design.html" class="project-summary"> <h3>Gain-boosted and Two-stage OTA Design</h3>
-                            <p><strong>Dates:</strong> September 2024 – October 2024</p>
-                            <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
-                            <p>Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and
-                                unity-gain frequency exceeding 50 MHz</p>
-                        </a>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="ldo.html" class="project-summary"> <h3>Low Dropout Regulator (LDO) Design</h3>
-                            <p><strong>Dates:</strong> April 2024 – May 2024</p>
-                            <p><strong>Class:</strong> Analog Integrated Circuit Design</p>
-                            <p>Designed an LDO with a telescopic cascode OTA, optimizing biasing and compensation for
-                                high output swing and stability...</p>
-                        </a>
-                    </div>
-
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="car.html" class="project-summary"> <h3>Autonomous Car Algorithm Development</h3>
-                            <p><strong>Dates:</strong> May 2024</p>
-                            <p><strong>Class:</strong> ECE484 - Autonomous Driving Systems</p>
-                            <p>Developed an autonomous car algorithm that raced around the Shanghai International Circuit
-                                using ROS, CARLA, RRTs, and Python...</p>
-                        </a>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="bms.html" class="project-summary"> <h3>STM32 F4 Based Active Balancing BMS</h3>
-                            <p><strong>Club:</strong> EV Concept</p>
-                            <p><strong>Dates:</strong> October 2023 – March 2024</p>
-                            <p>Developed an active balancing Battery Management System (BMS) for a custom-built 48V
-                                lithium-ion battery pack...</p>
-                        </a>
-                    </div>
-
-                    <div class="card-item" style="margin-bottom: 1.5em;">
-                        <a href="serdes.html" class="project-summary"> <h3>16-bit SERDES with PRBS</h3>
-                            <p><strong>Dates:</strong> November 2023 – December 2023</p>
-                            <p><strong>Class:</strong> Digital Integrated Circuit Design</p>
-                            <p>Designed a high-speed clock divider and serializer/deserializer (SERDES) systems,
-                                progressing from high-level schematics to finalized layouts and simulations...</p>
+                    <p class="experience-description">Working in the Silicon Engineering Group on advanced analog/mixed-signal CAD tools and methodologies for next-generation chip designs. Developing automation solutions and design flows for high-performance silicon development.</p>
+                    <div class="experience-link">
+                        <a href="https://www.apple.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
                         </a>
                     </div>
                 </div>
-            </article>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>Rivian</h3>
+                            <p class="role">Power Electronics Engineering Intern</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">Jan 2025 – May 2025</span>
+                            <span class="location">Champaign, IL</span>
+                        </div>
+                    </div>
+                    <p class="experience-description">Developed tolerance and noise analysis on various Power circuits, designed CAN based software for switching inverter testing</p>
+                    <div class="experience-link">
+                        <a href="https://rivian.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>Rocket Lab USA</h3>
+                            <p class="role">Space Systems Intern</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">May 2024 – Aug 2024</span>
+                            <span class="location">Long Beach, CA</span>
+                        </div>
+                    </div>
+                    <p class="experience-description">Designed machine learning models using PyTorch to automate PCBA defect analysis. Also worked on design and manufacturing of Battery Packs</p>
+                    <div class="experience-link">
+                        <a href="https://www.rocketlabusa.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>ST Microelectronics</h3>
+                            <p class="role">Embedded Applications Engineer</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">Jun 2023 – Dec 2023</span>
+                            <span class="location">Chicago, IL</span>
+                        </div>
+                    </div>
+                    <p class="experience-description">Designed and prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers.</p>
+                    <div class="experience-link">
+                        <a href="https://www.st.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>RelyIon Energy</h3>
+                            <p class="role">Embedded Battery Engineering Intern</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">May 2022 – Aug 2022</span>
+                            <span class="location">Santa Clara, CA</span>
+                        </div>
+                    </div>
+                    <p class="experience-description">Developed embedded hardware and software for a 480V High Voltage Energy Storage System using recycled batteries.</p>
+                    <div class="experience-link">
+                        <a href="https://www.relyionenergy.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="company-info">
+                            <h3>AbbVie</h3>
+                            <p class="role">AWS Developer Intern</p>
+                        </div>
+                        <div class="experience-meta">
+                            <span class="duration">Jan 2022 – May 2022</span>
+                            <span class="location">Champaign, IL</span>
+                        </div>
+                    </div>
+                    <p class="experience-description">Developed an internal Grafana-based monitoring system for EKS, ECS, and EC2.</p>
+                    <div class="experience-link">
+                        <a href="https://www.abbvie.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Company
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Innovative engineering solutions and technical achievements</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Pipelined ADC Design</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">ECE581 - Final Project</div>
+                            <div class="project-date">December 2024</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Designed the first stage of a fully differential 20Msamples/sec 1.5b/stage 12-bit pipelined ADC, focusing on the residue amplifier, sub-ADC, and overall system architecture.</p>
+                    <a href="adc.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>ViT Encoder Design</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">ECE 498 - Advanced VLSI</div>
+                            <div class="project-date">March 2025</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Designed a hardware-efficient ViT encoder using a systolic array for multi-head self-attention and feed-forward network operations with optimized memory usage.</p>
+                    <a href="nsu.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Gain-boosted and Two-stage OTA Design</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">Analog IC Design</div>
+                            <div class="project-date">Sep - Oct 2024</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Designed two OTA architectures achieving a differential-mode DC gain over 80 dB and unity-gain frequency exceeding 50 MHz with superior performance metrics.</p>
+                    <a href="ota_design.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Low Dropout Regulator (LDO) Design</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">Analog IC Design</div>
+                            <div class="project-date">Apr - May 2024</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Designed an LDO with a telescopic cascode OTA, optimizing biasing and compensation for high output swing and stability across various load conditions.</p>
+                    <a href="ldo.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Autonomous Car Algorithm Development</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">ECE484 - Autonomous Driving</div>
+                            <div class="project-date">May 2024</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Developed an autonomous car algorithm that raced around the Shanghai International Circuit using ROS, CARLA, RRTs, and Python for real-time path planning.</p>
+                    <a href="car.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>STM32 F4 Based Active Balancing BMS</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">EV Concept Club</div>
+                            <div class="project-date">Oct 2023 - Mar 2024</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Developed an active balancing Battery Management System (BMS) for a custom-built 48V lithium-ion battery pack with advanced monitoring and safety features.</p>
+                    <a href="bms.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>16-bit SERDES with PRBS</h3>
+                        </div>
+                        <div class="project-meta">
+                            <div class="project-class">Digital IC Design</div>
+                            <div class="project-date">Nov - Dec 2023</div>
+                        </div>
+                    </div>
+                    <p class="project-description">Designed a high-speed clock divider and serializer/deserializer (SERDES) systems, progressing from high-level schematics to finalized layouts and simulations.</p>
+                    <a href="serdes.html" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-            <article id="skills">
-                <h2 class="major">Skills & Certifications</h2>
-                <section>
-                    <h3 class="major">Technical Skills</h3>
-                    <ul class="alt">
-                        <li><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso</li>
-                        <li><strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Certifications</h2>
+                <p class="section-subtitle">Technical expertise and professional achievements</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3>
+                        <div class="skills-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        Design Software
+                    </h3>
+                    <ul class="skills-list">
+                        <li>
+                            <span class="skill-name">Cadence Virtuoso</span>
+
                         </li>
-                        <li><strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog</li>
-                        <li><strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate,
-                            Professional,
-                            Security Specialty)</li>
-                    </ul>
-                </section>
+                        <li>
+                            <span class="skill-name">Altium Designer</span>
 
-                <section>
-                    <h3 class="major">AWS Certifications</h3>
-                    <ul class="alt">
-                        <li>Amazon Web Services Certified Solutions Architect - Associate</li>
-                        <li>Amazon Web Services Certified Solutions Architect - Professional</li>
-                        <li>Amazon Web Services Certified Security - Specialty</li>
-                    </ul>
-                </section>
+                        </li>
+                        <li>
+                            <span class="skill-name">OrCAD</span>
 
-                <section>
-                    <h3 class="major">Hobbies & Interests</h3>
-                    <ul class="alt">
-                        <li>Rock Climbing</li>
-                        <li>Electric cars and Batteries</li>
-                        <li>NFL</li>
-                        <li>Formula 1</li>
-                    </ul>
-                </section>
-            </article>
+                        </li>
+                        <li>
+                            <span class="skill-name">KiCAD</span>
 
-            <article id="resume">
-                <h2 class="major">Resume</h2>
-                <p>You can view or download my full resume using the options below:</p>
-                
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>
+                        <div class="skills-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        Simulation Tools
+                    </h3>
+                    <ul class="skills-list">
+                        <li>
+                            <span class="skill-name">MATLAB/Simulink</span>
+
+                        </li>
+                        <li>
+                            <span class="skill-name">LTSPICE</span>
+
+                        </li>
+                        <li>
+                            <span class="skill-name">PSPICE</span>
+
+                        </li>
+                        <li>
+                            <span class="skill-name">ROS/CARLA</span>
+
+                        </li>
+                        <li>
+                            <span class="skill-name">PSIM</span>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>
+                        <div class="skills-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        Programming Languages
+                    </h3>
+                    <ul class="skills-list">
+                        <li>
+                            <span class="skill-name">Python</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">C/C++</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">Perl</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">Verilog</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">System Verilog</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">Java</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>
+                        <div class="skills-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        AWS Certifications
+                    </h3>
+                    <ul class="skills-list">
+                        <li>
+                            <span class="skill-name">Solutions Architect - Professional</span>
+                            <span class="skill-badge">Certified</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">Solutions Architect - Associate</span>
+                            <span class="skill-badge">Certified</span>
+                        </li>
+                        <li>
+                            <span class="skill-name">Security - Specialty</span>
+                            <span class="skill-badge">Certified</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id = "resume" class="section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Resume</h2>
+                <p class="section-subtitle">You can view or download my full resume using the options below:</p>
+            
                 <div style="text-align: center; margin: 2rem 0;">
                     <a href="#" class="button primary" onclick="alert('Resume download feature coming soon!')" style="margin: 0.5rem;">Download PDF Resume</a>
                     <a href="https://linkedin.com/in/dev-patel-aws" target="_blank" class="button" style="margin: 0.5rem;">View LinkedIn Profile</a>
                 </div>
                 
-                <div class="resume-content" style="text-align: left; background: rgba(40, 40, 40, 0.8); padding: 2rem; border-radius: 8px; border: 1px solid #444;">
-                    <h3 style="color: #00d4ff; margin-bottom: 1rem;">Dev Patel</h3>
-                    <p style="margin-bottom: 2rem; color: #ccc;">Electrical Engineering Student | Analog/Mixed Signal Design | Embedded Systems</p>
-                    
-                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Education</h4>
-                    <p><strong>University of Illinois Urbana Champaign</strong><br>
-                    Masters+BS in Electrical Engineering, Minor in Computer Science<br>
-                    GPA: 3.6<br>
-                    <em>Notable Courses:</em> Digital Integrated Circuit Design, FPGA Applications, Digital Signal Processing, Advanced Analog Integrated Circuit Design, Machine Learning in VLSI Design</p>
-                    
-                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Experience</h4>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <p><strong style="color: #00d4ff;">Apple</strong> - Analog Mixed Signal (AMS) CAD Design Intern<br>
-                        <em>May 2025 – Present | Cupertino, CA</em><br>
-                        Working in the Silicon Engineering Group on advanced analog/mixed-signal CAD tools and methodologies for next-generation chip designs.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's connect and discuss opportunities or collaborations. Currently open to full-time positions</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 1.5rem;">Contact Information</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>2021dpatel@gmail.com</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>devdp2@illinois.edu</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Alexandria, Virginia</span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>University of Illinois</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/dev-patel-aws" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/moonbeam87" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:2021dpatel@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <p><strong style="color: #00d4ff;">Rivian</strong> - Power Electronics Engineering Intern<br>
-                        <em>Jan 2025 – May 2025 | Champaign, IL</em><br>
-                        Developed tolerance and noise analysis on various Power circuits, designed CAN based software for switching inverter testing.</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <p><strong style="color: #00d4ff;">Rocket Lab USA</strong> - Space Systems Intern<br>
-                        <em>May 2024 – August 2024 | Long Beach, CA</em><br>
-                        Designed machine learning models using PyTorch to automate PCBA defect analysis.</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <p><strong style="color: #00d4ff;">ST Microelectronics</strong> - Embedded Applications Engineer<br>
-                        <em>June 2023 – December 2023 | Chicago, IL</em><br>
-                        Designed and prototyped a 250W grid-connected inverter using GaN MOSFETs and advanced gate drivers.</p>
-                    </div>
-                    
-                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Technical Skills</h4>
-                    <p><strong>Design Software:</strong> Altium, OrCAD, KiCAD, Cadence Virtuoso<br>
-                    <strong>Simulation Software:</strong> ROS, CARLA, PSIM, LTSPICE, PSPICE, MATLAB, Simulink<br>
-                    <strong>Languages:</strong> C, C++, Python, Java, Verilog, System Verilog<br>
-                    <strong>Cloud Frameworks:</strong> Amazon Web Services Certified (Architect Associate, Professional, Security Specialty)</p>
-                    
-                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Key Projects</h4>
-                    <p>• Pipelined ADC Design - 20Msamples/sec 1.5b/stage 12-bit pipelined ADC<br>
-                    • ViT Encoder Design - Hardware-efficient Vision Transformer encoder<br>
-                    • STM32 F4 Based Active Balancing BMS - Custom 48V lithium-ion battery management system<br>
-                    • 16-bit SERDES with PRBS - High-speed serializer/deserializer systems</p>
-                    
-                    <h4 style="color: #f0f0f0; border-bottom: 1px solid #666; padding-bottom: 0.5rem; margin: 2rem 0 1rem 0;">Certifications</h4>
-                    <p>• AWS Certified Solutions Architect - Associate<br>
-                    • AWS Certified Solutions Architect - Professional<br>
-                    • AWS Certified Security - Specialty</p>
                 </div>
-            </article>
-
-
-            <article id="contact">
-                <h2 class="major">Contact</h2>
-                <form method="post" action="#" onsubmit="return validateForm()">
-                    <div class="fields">
-                        <div class="field half">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" placeholder="Your Name" />
-                        </div>
-                        <div class="field half">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Your Email" />
-                        </div>
-                        <div class="field">
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" placeholder="Your Message" rows="4"></textarea>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="primary" /></li>
-                        <li><input type="reset" value="Reset" /></li>
-                    </ul>
-                </form>
-                <ul class="icons">
-                    <li><a href="https://linkedin.com/in/dev-patel-aws" target="_blank"
-                            class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/moonbeam87" target="_blank" class="icon brands fa-github"><span
-                                class="label">GitHub</span></a></li>
-                </ul>
-            </article>
+                
+                
+            </div>
+        </div>
+    </section>
 
         </div>
 
@@ -1087,18 +1712,18 @@
             greeting.innerHTML = `${message}!`;
         };
 
-        // Form validation (copiato dal tuo script, adattato per il template)
+        // Form validation for contact form
         function validateForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
 
             if (name === '' || email === '' || message === '') {
                 alert('All fields are required!');
                 return false;
             }
-            alert('Form submitted successfully!');
-            return true;
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            return false; // Prevent actual form submission for now
         }
 
 
