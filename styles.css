@@ -1,0 +1,127 @@
+:root {
+    --primary-color: #4f46e5;
+    --primary-light: #6366f1;
+    --primary-dark: #4338ca;
+    --accent-color: #0891b2;
+    --accent-light: #06b6d4;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-tertiary: #e2e8f0;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --glass-bg: rgba(15, 23, 42, 0.05);
+    --border-color: rgba(15, 23, 42, 0.1);
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+}
+
+/* Global Overrides */
+body {
+    background: var(--gradient-bg);
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p, li, span {
+    color: var(--text-secondary);
+}
+
+strong, b {
+    color: var(--text-primary) !important;
+}
+
+/* Navigation */
+nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white !important;
+}
+
+.btn-secondary {
+    border-color: var(--border-color);
+    color: var(--text-primary) !important;
+}
+
+.btn-secondary:hover {
+    background: var(--glass-bg);
+    border-color: var(--primary-color);
+}
+
+/* Cards & Components */
+.card, 
+.feature-card, 
+.experience-card, 
+.project-card, 
+.education-card, 
+.skills-category {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary);
+    box-shadow: var(--shadow-light);
+}
+
+.metric-card {
+    background: var(--bg-tertiary) !important; /* Slightly darker than card for contrast */
+    border: 1px solid var(--border-color) !important;
+}
+
+.metric-value {
+    color: var(--primary-color) !important;
+}
+
+.metric-label {
+    color: var(--text-muted) !important;
+}
+
+/* Tags */
+.company-tag, 
+.course-tag, 
+.tech-tag {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+.company-tag:hover, 
+.course-tag:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Code Blocks */
+.spec-block {
+    background: var(--bg-primary) !important;
+    color: var(--text-secondary) !important;
+    border-left: 4px solid var(--primary-color) !important;
+    border: 1px solid var(--border-color);
+}
+
+/* Project Specific Overrides */
+.gallery img {
+    box-shadow: var(--shadow-medium);
+}
+
+footer {
+    color: var(--text-muted) !important;
+}

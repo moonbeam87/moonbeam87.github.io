@@ -9,25 +9,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #6366f1;
-            --primary-light: #818cf8;
-            --primary-dark: #4f46e5;
-            --accent-color: #06b6d4;
-            --accent-light: #22d3ee;
-            --text-primary: #ffffff;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-tertiary: #334155;
-            --card-bg: rgba(30, 41, 59, 0.8);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --primary-color: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --accent-color: #0891b2;
+            --accent-light: #06b6d4;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --bg-primary: #f8fafc;
+            --bg-secondary: #f1f5f9;
+            --bg-tertiary: #e2e8f0;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --glass-bg: rgba(15, 23, 42, 0.05);
+            --border-color: rgba(15, 23, 42, 0.1);
+            --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
             --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
         }
 
         * {
@@ -1097,6 +1097,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -1106,15 +1107,16 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Dev Patel</div>
+            <a href="#" class="logo">Dev Patel</a>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li style="margin-left: 1rem;"><a href="#resume" target="_blank"
+                        style="color: var(--primary-color);">Resume</a></li>
             </ul>
             <button class="mobile-toggle">
                 <i class="fas fa-bars"></i>
@@ -1675,19 +1677,25 @@
             </div>
         </div>
     </section>
-    <section id="resume" class="section>
+    <section id="resume" class="section">
         <div class=" container">
-        <div class="section-header">
-            <h2 class="section-title">Resume</h2>
-            <p class="section-subtitle">You can view or download my full resume using the options below:</p>
+            <div class="section-header">
+                <h2 class="section-title">Resume</h2>
+                <p class="section-subtitle">You can view or download my full resume using the options below:</p>
 
-            <div style="text-align: center; margin: 2rem 0;">
-                <a href="#" target="_blank" class="button" style="margin: 0.5rem;">Download PDF Resume</a>
-                <a href="https://linkedin.com/in/dev-patel-aws" target="_blank" class="button"
-                    style="margin: 0.5rem;">View LinkedIn Profile</a>
+                <div class="hero-actions" style="margin: 2rem 0;">
+                    <a href="https://drive.google.com/file/d/1fEZB2Q3hm1HllGfTuCoQ_GLKJLNVvM_/view?usp=sharing"
+                        target="_blank" class="btn-primary">
+                        <i class="fas fa-file-pdf"></i>
+                        View PDF Resume
+                    </a>
+                    <a href="https://linkedin.com/in/dev-patel-aws" target="_blank" class="btn-secondary">
+                        <i class="fab fa-linkedin"></i>
+                        View LinkedIn Profile
+                    </a>
+                </div>
+
             </div>
-
-        </div>
         </div>
     </section>
     <!-- Contact Section -->
@@ -1743,7 +1751,7 @@
     </div>
 
     <footer id="footer">
-        <p class="copyright">&copy; 2025 Dev Patel. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        <p class="copyright">&copy; 2026 Dev Patel. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
     </footer>
 
     </div>
